@@ -4,3 +4,4 @@ node_modules/
 workbench.preview.html
 workbench-preview.png
 canvas-preview.png
+.release-notes.md
