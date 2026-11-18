@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "codex-design-studio": {
+      "command": "node",
+      "args": ["./src/mcp-server.mjs"],
+      "cwd": "."
+    }
+  }
+}

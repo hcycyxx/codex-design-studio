@@ -1,0 +1,6 @@
+node_modules/
+*.log
+.DS_Store
+workbench.preview.html
+workbench-preview.png
+canvas-preview.png

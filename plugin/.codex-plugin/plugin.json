@@ -1,0 +1,20 @@
+{
+  "name": "codex-design-studio",
+  "version": "0.1.0",
+  "description": "DSH-style design workbench inside Codex: device-framed previews, click-to-edit annotations and live tweaks.",
+  "author": { "name": "Local Build" },
+  "license": "MIT",
+  "keywords": ["codex", "design", "preview", "canvas"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Design Studio",
+    "shortDescription": "Open HTML design workbench in the plugin sidebar.",
+    "longDescription": "Shows Open Design HTML artifacts in device frames inside the Codex sidebar. Click any element to create an annotation with its CSS selector and source location; adjust design tokens with live sliders and write them back to the HTML file.",
+    "developerName": "Local Build",
+    "category": "Design",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "defaultPrompt": ["Open the design studio sidebar", "Show me the current design workbench"],
+    "brandColor": "#2B2118"
+  }
+}

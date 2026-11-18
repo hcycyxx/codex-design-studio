@@ -1,0 +1,7 @@
+[mcp_servers.open-design]
+command = "npx"
+args = ["-y", "@feimacode/open-design-agent-kit-mcp@0.4.0"]
+
+[mcp_servers.codex-design-studio]
+command = "node"
+args = ["../plugin/src/mcp-server.mjs"]

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>咖啡订阅 · 落地页</title>
+<style>
+:root{
+  --bg:#F6F1E7;
+  --surface:#FFFDF8;
+  --ink:#2B2118;
+  --muted:#7A6A58;
+  --accent:#C9632F;
+  --radius-md:14px;
+  --radius-lg:28px;
+  --space:24px;
+  --font-display:Georgia,"Songti SC",serif;
+  --font-body:system-ui,"PingFang SC",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body)}
+.wrap{max-width:960px;margin:0 auto;padding:64px 28px}
+.eyebrow{color:var(--accent);font-size:13px;letter-spacing:.18em;text-transform:uppercase}
+h1{font-family:var(--font-display);font-size:clamp(40px,7vw,76px);line-height:1.05;margin:14px 0 18px}
+.lead{font-size:19px;color:var(--muted);max-width:560px;line-height:1.6}
+.cta{display:inline-block;margin-top:28px;background:var(--accent);color:#fff;padding:15px 30px;border-radius:var(--radius-md);text-decoration:none;font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--space);margin-top:64px}
+.card{background:var(--surface);border-radius:var(--radius-lg);padding:28px;box-shadow:0 8px 30px rgba(43,33,24,.06)}
+.card h3{font-family:var(--font-display);font-size:22px;margin:0 0 10px}
+.card p{color:var(--muted);line-height:1.6;margin:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Slow Roast Club</div>
+  <h1>好咖啡，<br>每月送到家。</h1>
+  <p class="lead">精选单一产地豆子，烘焙后 48 小时内寄出。按你的口味节奏，随时暂停。</p>
+  <a class="cta" href="#">开始订阅 →</a>
+  <div class="cards">
+    <div class="card"><h3>当季鲜烘</h3><p>每周小批量烘焙，包装上印着烘焙日期。</p></div>
+    <div class="card"><h3>口味档案</h3><p>记录你的偏好，越喝越懂你。</p></div>
+    <div class="card"><h3>随时暂停</h3><p>旅行或出差，一键暂停不扣费。</p></div>
+  </div>
+</div>
+</body>
+</html>

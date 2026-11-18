@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Studio</title>
+<style>
+:root{--ds-bg:#f4f4f5;--ds-panel:#ffffff;--ds-ink:#202124;--ds-muted:#6b7280;--ds-line:#e4e4e7;--ds-accent:#e4572e}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:system-ui,"PingFang SC",sans-serif;color:var(--ds-ink);background:var(--ds-bg)}
+#gate{position:fixed;inset:0;display:grid;place-content:center;gap:14px;text-align:center;background:#111827;color:#fff;z-index:99}
+#gate button{padding:12px 22px;border:0;border-radius:10px;background:var(--ds-accent);color:#fff;font-size:15px;cursor:pointer}
+.app{display:grid;grid-template-columns:180px 1fr 220px;grid-template-rows:48px 1fr;height:100vh}
+header{grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:0 14px;background:var(--ds-panel);border-bottom:1px solid var(--ds-line)}
+header h1{font-size:15px;margin:0;font-weight:650}
+header .spacer{flex:1}
+header button,.toolbar button{border:1px solid var(--ds-line);background:#fff;border-radius:8px;padding:6px 12px;font-size:13px;cursor:pointer}
+header button.active{background:var(--ds-accent);color:#fff;border-color:var(--ds-accent)}
+aside{background:var(--ds-panel);border-right:1px solid var(--ds-line);overflow:auto;padding:10px}
+aside.right{border-right:0;border-left:1px solid var(--ds-line)}
+.aside-title{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--ds-muted);margin:4px 4px 10px}
+.screen{display:block;width:100%;text-align:left;border:0;background:transparent;padding:8px 10px;border-radius:8px;font-size:13px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.screen:hover{background:#f4f4f5}
+.screen.active{background:#fff1ec;color:var(--ds-accent);font-weight:600}
+.main{display:flex;flex-direction:column;min-width:0}
+.toolbar{display:flex;gap:8px;align-items:center;padding:8px 12px;background:var(--ds-panel);border-bottom:1px solid var(--ds-line)}
+.toolbar select{font-size:13px;padding:5px 8px;border:1px solid var(--ds-line);border-radius:8px}
+#hint{font-size:12px;color:var(--ds-muted);margin-left:auto}
+#stage{flex:1;overflow:auto;padding:24px;display:flex;justify-content:center}
+#iframe-wrap{position:relative;transform-origin:top center}
+#frame{width:100%;height:100%;border:1px solid var(--ds-line);border-radius:12px;background:#fff;box-shadow:0 12px 40px rgba(0,0,0,.12)}
+#frame.commenting{cursor:crosshair}
+#commentBar{display:none;gap:8px;padding:8px 12px;background:#fff8f5;border-bottom:1px solid #f7d9cc}
+#commentBar input{flex:1;padding:7px 10px;border:1px solid var(--ds-line);border-radius:8px;font-size:13px}
+#commentBar button{border:0;border-radius:8px;padding:6px 14px;cursor:pointer;font-size:13px}
+#sendBtn{background:var(--ds-accent);color:#fff}
+.tweak{margin-bottom:14px}
+.tweak label{display:block;font-size:12px;color:var(--ds-muted);margin-bottom:5px}
+.tweak input[type=range]{width:100%}
+.tweak input[type=color]{width:100%;height:30px;border:1px solid var(--ds-line);border-radius:6px;background:#fff}
+</style>
+</head>
+<body>
+<div id="gate"><div>设计工作台需要在侧栏中打开</div><button id="openBtn">打开当前项目的设计工作台</button></div>
+<div class="app">
+  <header>
+    <h1>◈ Design Studio</h1>
+    <span class="spacer"></span>
+    <button id="commentBtn" title="点选元素加批注">✎ 批注</button>
+    <button id="tweaksBtn" title="调整颜色/间距">⚙ Tweaks</button>
+  </header>
+  <aside><div class="aside-title">设计稿 Screens</div><div id="screens"></div></aside>
+  <div class="main">
+    <div class="toolbar">
+      <select id="device"><option value="desktop">桌面 1280</option><option value="tablet">平板 768</option><option value="phone">手机 390</option></select>
+      <span id="hint">连接中…</span>
+    </div>
+    <div id="commentBar"><input id="commentText" placeholder="点页面元素后，写下要改什么…"><button id="cancelBtn">取消</button><button id="sendBtn">发给 Codex</button></div>
+    <div id="stage"><div id="iframe-wrap"><iframe id="frame" title="design preview"></iframe></div></div>
+  </div>
+  <aside class="right" id="tweaks"><div class="aside-title">Tweaks 实时调整</div><div id="tweakList"></div></aside>
+</div>
+<script type="module">/*BUNDLE*/</script>
+</body>
+</html>
